@@ -1,0 +1,103 @@
+:root,*,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: block;
+    width: 100%;
+    --shadow-color: rgba(25, 25, 25, 0.2);
+}
+.title, main, .view-table{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 10rem;
+}
+.title img{
+    width: 8rem;
+    height: 8rem;
+}
+.submit-btn{
+    display: block;
+    justify-content: center;
+    width: 100%;
+}
+.submit-btn button{
+    position: relative;
+    width: 100%;
+    padding: .8rem 0;
+    border: transparent;
+    box-shadow: 0 4px 8px 0 var(--shadow-color);
+    cursor: pointer;
+    isolation: isolate;
+    overflow: hidden;
+}
+.submit-btn > button > span{
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+}
+.submit-btn button > :first-child{
+    left: 0;
+    top: 0;
+}
+.submit-btn button > :last-child{
+    right: 0;
+    top: 0;
+}
+.submit-btn button::before{
+    content: "";
+    position: absolute;
+    width: 5%;
+    aspect-ratio: 1;
+    inset: 0;
+    margin: auto;
+    background-color: yellow;
+    transition: transform .8s;
+}
+.submit-btn button:hover::before{
+    transform: scale(40);
+}
+.submit-btn button:has(:first-child:hover)::before{
+    margin-left: 0;
+}
+.submit-btn button:has(:last-child:hover)::before{
+    margin-right: 0;
+}
+main,.view-table{
+    /* background-color: yellow; */
+    max-width: 30rem;
+    margin: 0 auto;
+}
+main label{
+    margin-right: 1rem;
+}
+.form-group{
+    /* background-color: red; */
+    margin: .8rem 0;
+}
+.form-group input{
+    padding: .8rem 2.4rem;
+    border: transparent;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 var(--shadow-color);
+}
+.view-table{
+    flex-direction: column;
+}
+.view-table table{
+    border-spacing: 0px;
+}
+.view-table table th, .view-table table td{
+    border-top: 1px solid black;
+    padding: .4rem;
+}
+/* additional on */
+.margin-top-xl{
+    margin-top: 3.2rem;
+}
+.margin-top-s{
+    margin-top: 1.6rem;
+}

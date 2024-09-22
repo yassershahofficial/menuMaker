@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Maker</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main class="main">
+    <header>
         <div class="title">
             <h1>Menu Maker</h1>
             <img src="img/chef-hat.avif" alt="chef-hat-logo">
         </div>
+    </header>
+    <main>
         <form action="" method="post">
             <div class="form-group">
                 <label for="">Food Name : </label>
@@ -18,14 +21,14 @@
             </div>
             <div class="form-group">
                 <label for="">Price(RM) : </label>
-                <input type="number" name="fPrice" placeholder="3.00">
+                <input type="number" name="fPrice" placeholder="3.00" step=".10" min=".10">
             </div>
-            <div class="submit-btn">
-                <button type="submit">Add</button>
+            <div class="submit-btn margin-top-s">
+                <button type="submit"><span></span>Add<span></span></button>
             </div>
         </form>
     </main>
-    <sub>
+    <div class="view-table margin-top-xl">
         <form action="" method="get">
             <table>
                 <thead>
@@ -49,7 +52,9 @@
                 </tbody>
             </table>
         </form>
-        <button type="button">Generate</button>
-    </sub>
+        <div class="submit-btn margin-top-s">
+            <button type="button"><span></span>Generate<span></span></button>
+        </div>
+    </div>
 </body>
 </html>
