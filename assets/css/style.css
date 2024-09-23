@@ -5,7 +5,9 @@
 body{
     display: block;
     width: 100%;
-    --shadow-color: rgba(25, 25, 25, 0.2);
+    --shadow: rgba(25, 25, 25, 0.2);
+    --btn: rgba(249, 186, 13, 1);
+    --btn-hover: rgba(120, 76, 36, 0.316);
 }
 .title, main, .view-table{ 
     display: flex;
@@ -17,6 +19,26 @@ body{
     width: 8rem;
     height: 8rem;
 }
+.title img:hover{
+    animation: jiggle .6s;
+}
+@keyframes jiggle{
+    0%{
+        transform: translate(0,0) rotate(0deg);
+    }
+    25%{
+        transform: translate(1px,1px) rotate(5deg);
+    }
+    50%{
+        transform: translate(-1px,-1px) rotate(-5deg);
+    }
+    75%{
+        transform: translate(2px,1px) rotate(7deg);
+    }
+    100%{
+        transform: translate(0,0) rotate(0deg);
+    }
+}
 .submit-btn{
     display: block;
     justify-content: center;
@@ -27,10 +49,11 @@ body{
     width: 100%;
     padding: .8rem 0;
     border: transparent;
-    box-shadow: 0 4px 8px 0 var(--shadow-color);
+    box-shadow: 0 4px 8px 0 var(--shadow);
     cursor: pointer;
     isolation: isolate;
     overflow: hidden;
+    background-color: var(--btn);
 }
 .submit-btn > button > span{
     position: absolute;
@@ -54,17 +77,28 @@ body{
     aspect-ratio: 1;
     inset: 0;
     margin: auto;
-    background-color: yellow;
-    transition: transform .8s;
+    background-color: var(--btn-hover);
+    opacity: 0;
 }
 .submit-btn button:hover::before{
     transform: scale(40);
+    transition: transform 2s;
 }
 .submit-btn button:has(:first-child:hover)::before{
     margin-left: 0;
+    transition: transform 1.2s;
 }
 .submit-btn button:has(:last-child:hover)::before{
     margin-right: 0;
+    transition: transform 1.2s;
+}
+.submit-btn button:hover::before, 
+.submit-btn button:has(:first-child:hover)::before,
+.submit-btn button:has(:last-child:hover)::before{
+    opacity: 1;
+}
+.submit-btn button:active{
+    opacity: .8;
 }
 main,.view-table{
     /* background-color: yellow; */
@@ -82,7 +116,7 @@ main label{
     padding: .8rem 2.4rem;
     border: transparent;
     border-radius: 3px;
-    box-shadow: 0 4px 8px 0 var(--shadow-color);
+    box-shadow: 0 4px 8px 0 var(--shadow);
 }
 .view-table{
     flex-direction: column;
