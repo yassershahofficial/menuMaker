@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-    fname:{  
+    fName:{  
         type: String,
         required: true,
         unique: true
     },
-    ftype:{
+    fType:{
         type: String,
         required: true,
     },
-    fprice: String
+    fPrice: Number
 });
 
 const menu = mongoose.model('menu',schema,'menu');

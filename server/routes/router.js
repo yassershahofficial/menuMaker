@@ -9,8 +9,8 @@ const controller = require('../controller/controller')
  */
 route.get('/', services.homeRoutes)
 
-route.get('/api/users', controller.find)
-route.post('/api/users', controller.create)
-route.delete('/api/users/:id', controller.delete)
+route.post('/api/menus', controller.create)
+route.get('/api/menus', controller.find)
+route.delete('/api/menus/:id', controller.delete)
 
 module.exports = route;

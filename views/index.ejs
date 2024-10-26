@@ -1,56 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Maker</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <div class="title">
-            <h1>Menu Maker</h1>
-            <img src="img/chef-hat.avif" alt="chef-hat-logo">
-        </div>
-    </header>
+<!-- header -->
+    <%- include('include/_header') %>
+<!-- /header -->
     <main>
-        <form action="" method="post">
-            <div class="form-group">
-                <label for="">Food Name : </label>
-                <input type="text" name="fName" placeholder="French Fries">
-            </div>
-            <div class="form-group">
-                <label for="">Food Type : </label>
-                <select name="fType" id="fType">
-                    <optgroup label="Simple">
-                        <option value="">Foods</option>
-                        <option value="">Drinks</option>
-                        <option value="">Desserts</option>
-                    </optgroup>
-                    <optgroup label="Detailed">
-                        <option value="">Main Courses</option>
-                        <option value="">Side Dishes</option>
-                        <option value="">Juices</option>
-                        <option value="">Fruits</option>
-                        <option value="">Cocktails</option>
-                        <option value="">Appertizer</option>
-                        <option value="">Cakes</option>
-                    </optgroup>
-                    <optgroup label="Advanced">
-                        <option value="">Chef Recommendations</option>
-                        <option value="">People's Favourites</option>
-                        <option value="">Best Sellers</option>
-                    </optgroup>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="">Price(RM) : </label>
-                <input type="number" name="fPrice" placeholder="3.00" step=".10" min=".10">
-            </div>
-            <div class="submit-btn margin-top-s">
-                <button type="submit"><span></span>Add<span></span></button>
-            </div>
-        </form>
+        <%- include('include/form') %>
     </main>
     <div class="view-table margin-top-xl">
         <form action="" method="get">
@@ -64,18 +16,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Nasi Lemak</td>
-                        <td>Foods</td>
-                        <td>5.00</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Teh O Ais</td>
-                        <td>Drinks</td>
-                        <td>2.50</td>
-                    </tr>
+                    <%- include('include/show') %>
                 </tbody>
             </table>
         </form>
@@ -83,5 +24,7 @@
             <button type="button"><span></span>Generate<span></span></button>
         </div>
     </div>
-</body>
-</html>
+
+<!-- footer -->
+<%- include('include/_footer') %>
+<!-- /footer -->

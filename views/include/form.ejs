@@ -1,0 +1,38 @@
+<form action="/api/menus" method="post">
+    <div class="form-group">
+        <input type="hidden" name="id" value="">
+        <label for="">Food Name : </label>
+        <input type="text" name="fName" placeholder="French Fries" value="">
+    </div>
+    <div class="form-group">
+        <label for="">Food Type : </label>
+        <select name="fType" id="fType">
+            <optgroup label="Simple">
+                <option value="Foods">Foods</option>
+                <option value="Drinks">Drinks</option>
+                <option value="Desserts">Desserts</option>
+            </optgroup>
+            <optgroup label="Detailed">
+                <option value="Main Courses">Main Courses</option>
+                <option value="Side Dishes">Side Dishes</option>
+                <option value="Juices">Juices</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Cocktails">Cocktails</option>
+                <option value="Appertizer">Appertizer</option>
+                <option value="Cakes">Cakes</option>
+            </optgroup>
+            <optgroup label="Advanced">
+                <option value="Chef Recommendations">Chef Recommendations</option>
+                <option value="People's Favourites">People's Favourites</option>
+                <option value="Best Sellers">Best Sellers</option>
+            </optgroup>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Price(RM) : </label>
+        <input type="number" name="fPrice" placeholder="3.00" step=".10" min=".10" value="">
+    </div>
+    <div class="submit-btn margin-top-s">
+        <button type="submit"><span></span>Add<span></span></button>
+    </div>
+</form>

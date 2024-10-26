@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
+const bodyparser = require('body-parser');
 
 const connectDB = require('./server/database/connection');
 const app = express();
@@ -9,6 +10,9 @@ const PORT = process.env.PORT || 8080;
 
 //MongoDB connection
 connectDB();
+
+//parse request
+app.use(bodyparser.urlencoded({extended:true}));
 
 //set view engine 
 app.set("view engine", "ejs")
