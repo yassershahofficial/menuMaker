@@ -1,12 +1,8 @@
+<% for(var i=0; i<menus.length; i++){ %>
 <tr>
-    <td>1</td>
-    <td>Nasi Lemak</td>
-    <td>Foods</td>
-    <td>5.00</td>
+    <td><%= i+1 %></td>
+    <td><%= menus[i].fName %></td>
+    <td><%= menus[i].fType %></td>
+    <td><%= menus[i].fPrice %></td>
 </tr>
-<tr>
-    <td>2</td>
-    <td>Teh O Ais</td>
-    <td>Drinks</td>
-    <td>2.50</td>
-</tr>
+<% } %>

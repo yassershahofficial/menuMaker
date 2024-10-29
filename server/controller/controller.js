@@ -25,8 +25,14 @@ exports.create = (req,res)=>{
         });
 }
 
-exports.find = (req,res) => {
-
+exports.find = (req,res)=>{
+    menu.find()
+            .then(data =>{
+                res.send(data)
+            })
+            .catch(err =>{
+                res.status(500).send({message: err.message || "Error occured while retrieving information"})
+            })
 }
 
 exports.delete = (req,res) => {
