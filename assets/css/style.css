@@ -133,6 +133,13 @@ main label{
     border-top: 1px solid black;
     padding: .4rem;
 }
+.fi-ss-trash{
+    cursor: pointer;
+    padding: 6px 3px 3px 3px;
+}
+.fi-ss-trash:hover{
+    background-color: var(--btn-hover);
+}
 /* additional on */
 .margin-top-xl{
     margin-top: 3.2rem;

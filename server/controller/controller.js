@@ -2,7 +2,7 @@ var menu = require('../model/model');
 
 exports.create = (req,res)=>{
     if(!req.body){
-        res.status(400).send({message : "Content cannot be empty!" });
+        res.status(400).send({message : "Menu cannot be empty!" });
         return;
     }
 
@@ -27,14 +27,25 @@ exports.create = (req,res)=>{
 
 exports.find = (req,res)=>{
     menu.find()
-            .then(data =>{
-                res.send(data)
-            })
-            .catch(err =>{
-                res.status(500).send({message: err.message || "Error occured while retrieving information"})
-            })
+        .then(data =>{
+            res.send(data)
+        })
+        .catch(err =>{
+            res.status(500).send({message: err.message || "Error occured while retrieving information"})
+        })
 }
 
 exports.delete = (req,res) => {
-    
+    const id = req.params.id;
+    menu.findByIdAndDelete(id)
+        .then(data =>{
+            if(!data){
+                res.status(404).send({message : `Cannot delete with id = ${id} , Maybe id is incorrect`})
+            }else{
+                res.send({message : "Menu was deleted successfully!"})
+            }
+        })
+        .catch(err =>{
+            res.status(500).send({message: err.message || `Cannot delete menu id = ${id}`})
+        })
 }
