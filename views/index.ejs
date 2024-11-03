@@ -5,7 +5,7 @@
         <%- include('include/form') %>
     </main>
     <div class="view-table margin-top-xl">
-        <form action="" method="get">
+        <form action="/api/menus" method="get">
             <table>
                 <thead>
                     <tr>
@@ -20,8 +20,11 @@
                 </tbody>
             </table>
         </form>
+        
         <div class="submit-btn margin-top-s">
-            <button type="button"><span></span>Generate<span></span></button>
+            <form action="/generate-pdf" method="get">
+                <button type="submit" href=""><span></span>Generate<span></span></button>
+            </form>
         </div>
     </div>
 
