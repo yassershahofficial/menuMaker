@@ -26,7 +26,7 @@ exports.create = (req,res)=>{
 }
 
 exports.find = (req,res)=>{
-    menu.find()
+    menu.find().sort({fType : -1})
         .then(data =>{
             res.send(data)
         })

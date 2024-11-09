@@ -3,7 +3,7 @@ const fs = require('fs');
 var menu = require('../model/model');
 
 exports.create = async(req,res) => {
-    const records = await menu.find();
+    const records = await menu.find().sort({ fType : -1});
 
     if(records.length === 0){
         return res.status(404).send({message: "No records Found"});
@@ -21,29 +21,14 @@ exports.create = async(req,res) => {
         lineGap: 50,
         underline: true
     })
-
+    
     doc.fontSize(16);
     for(var i=0; i<records.length; i++){
         doc.text(records[i].fName + " : RM" + records[i].fPrice, {
             align: 'center'
         })
-        // doc.text(records[i].fPrice, {
-        //     lineBreak: true,
-        //     // width: 40,
-        //     align: 'right'
-        // })
         doc.moveDown();
     }
-
-    // doc.fontSize(16);
-    // doc.text("test123", {
-    //     align: 'center'
-    // })
-    // doc.moveDown();
-    // doc.text("test432", {
-    //     align: 'center'
-    // })
-    // doc.moveDown();
 
     doc.end();
     
